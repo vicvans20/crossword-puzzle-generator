@@ -23,9 +23,25 @@ n * l * * * * *
 * f e m m e * * 
 * * * * * * * *
 ```
+Crossword legend and coordinates:
+```
+:06 > puts c.display
+1   2           
+  *   * * * * * 
+  *   * * * * * 
+  *   * * * * * 
+* 3         * * 
+* * * * * * * *
+
+:07 > puts c.legend
+1. (1, 1) across: flying over the grass
+1. (1, 1) down: breakfast commonly!
+2. (3, 1) down: communication action
+3. (2, 5) across: !man
+```
 Word find:
 ```
-:06 > puts c.word_find
+:08 > puts c.word_find
 p a p i l l o n 
 a u a q g u o i 
 i n r j i h t n 
