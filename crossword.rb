@@ -279,7 +279,7 @@ class Crossword
     end
  
     def set_cell(col, row, value)
-        @grid[row-1][col-1] = value
+      @grid[row-1][col-1] = value
     end
  
     def get_cell(col, row)
@@ -328,7 +328,7 @@ class Crossword
     end
  
     def order_number_words() # orders words and applies numbering system to them
-        @current_word_list.sort_by { |i| i.col + i.row}
+        @current_word_list = @current_word_list.sort_by { |i| i.col + i.row}
         count = 1
         icount = 1
         @current_word_list.each do |word|
@@ -350,9 +350,9 @@ class Crossword
             order_number_words
         end
  
-        copy = self.clone #OPTIMiZE
+        copy = Marshal.load(Marshal.dump(self))
 
-        @current_word_list.each do |word|
+        copy.current_word_list.each do |word|
             copy.set_cell(word.col, word.row, word.number)
         end
         
@@ -364,6 +364,7 @@ class Crossword
         end
         
         outStr = outStr.gsub(/[a-z]/, ' ')
+
         return outStr
     end
  
